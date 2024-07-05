@@ -6,12 +6,21 @@ module "vpc" {
 
   azs             = data.aws_availability_zones.azs.names
   public_subnets = var.public_subnets
-
   enable_dns_hostnames = true
 
   tags = {
-    Name        = "Jenkins-server"
-    Terraform   = "true"
+    Name = "Jenkin_VPC"
+    Terraform = "true"
     Environment = "dev"
   }
+
+  public_subnet_tags = {
+    Name = "Jenkins_Public_Subnet"
+  }
+
+
+  public_route_table_tags = {
+    Name = "Jenkins_Public_Subnet_RT"
+  }
 }
+
