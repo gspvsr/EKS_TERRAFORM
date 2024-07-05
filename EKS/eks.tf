@@ -28,11 +28,3 @@ module "eks" {
     Terraform   = "true"
   }
 }
-
-resource "aws_cloudwatch_log_group" "this" {
-  name = "/aws/eks/my-cluster/cluster"
-
-  lifecycle {
-    ignore_changes = [name]
-  }
-}
