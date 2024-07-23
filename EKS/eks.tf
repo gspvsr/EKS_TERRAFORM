@@ -2,7 +2,7 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 20.0"
 
-  cluster_name    = "my-cluster"
+  cluster_name    = "gsp_cluster"
   cluster_version = "1.30"
 
   cluster_endpoint_public_access = true
@@ -15,7 +15,7 @@ module "eks" {
     example = {
       # Starting on 1.30, AL2023 is the default AMI type for EKS managed node groups
       ami_type       = "AL2023_x86_64_STANDARD"
-      instance_types = ["t2.small"]
+      instance_types = ["m5.medum"]
 
       min_size     = 1
       max_size     = 2
