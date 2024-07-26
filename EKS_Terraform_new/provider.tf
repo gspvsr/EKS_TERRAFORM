@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "roboshop-remote-state-backend3"
-    key    = "EKS-Practice1"
+    key    = "EKS-Terraform_New"
     region = "us-east-1"
   }
 }
@@ -17,5 +17,4 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-
 
